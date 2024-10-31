@@ -1,4 +1,4 @@
-package com.oopsmails.springboot3.restcrud.book;
+package com.oopsmails.springboot3.restcrud;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
@@ -19,10 +19,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @WebAppConfiguration
 @SpringBootTest(classes = { //
-        Springboot3RestCrudBookApplicationTest.class, //
-        Springboot3RestCrudBookApplicationTest.Springboot3RestCrudApplicationTestConfig.class, //
+        Springboot3RestCrudApplicationTest.class, //
+        Springboot3RestCrudApplicationTest.Springboot3RestCrudApplicationTestConfig.class, //
 })
-class Springboot3RestCrudBookApplicationTest {
+class Springboot3RestCrudApplicationTest {
     @Autowired
     protected ObjectMapper objectMapper;
 
