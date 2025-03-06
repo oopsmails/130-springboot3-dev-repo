@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/general")
+@RequestMapping("home")
 public class HomeController {
 
     private final HomeService homeService;

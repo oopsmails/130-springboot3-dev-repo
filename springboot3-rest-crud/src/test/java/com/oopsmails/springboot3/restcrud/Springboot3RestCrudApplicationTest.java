@@ -1,6 +1,5 @@
 package com.oopsmails.springboot3.restcrud;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,7 +15,6 @@ import java.time.ZoneId;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-
 @WebAppConfiguration
 @SpringBootTest(classes = { //
         Springboot3RestCrudApplicationTest.class, //
@@ -24,18 +22,18 @@ import static org.assertj.core.api.Assertions.assertThat;
 })
 class Springboot3RestCrudApplicationTest {
     @Autowired
-    protected ObjectMapper objectMapper;
+    protected Clock clock;
 
     @Test
     void contextLoads() {
-        assertThat(this.objectMapper).isNotNull();
+        assertThat(this.clock).isNotNull();
     }
 
     @TestConfiguration
     @ComponentScan("com.oopsmails.springboot3.restcrud.book")
     public static class Springboot3RestCrudApplicationTestConfig {
         @Bean
-        public Clock appClock() {
+        public Clock clock() {
             LocalDateTime mockNow = LocalDateTime.of(2019, Month.FEBRUARY, 20, 10, 00, 20);
             Clock result = Clock.fixed(mockNow.atZone(ZoneId.of("Canada/Eastern")).toInstant(), ZoneId.of("Canada/Eastern"));
 
