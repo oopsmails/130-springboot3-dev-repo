@@ -1,9 +1,11 @@
 package com.oopsmails.springboot3.restcrud;
 
+import com.oopsmails.springboot3.restcrud.book.repository.BookRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.TestConfiguration;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.test.context.web.WebAppConfiguration;
@@ -32,6 +34,9 @@ class Springboot3RestCrudApplicationTest {
     @TestConfiguration
     @ComponentScan("com.oopsmails.springboot3.restcrud.book")
     public static class Springboot3RestCrudApplicationTestConfig {
+        @MockBean
+        public BookRepository bookRepository;
+
         @Bean
         public Clock clock() {
             LocalDateTime mockNow = LocalDateTime.of(2019, Month.FEBRUARY, 20, 10, 00, 20);

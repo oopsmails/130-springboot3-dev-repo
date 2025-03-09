@@ -16,6 +16,7 @@
 
     <modules>
         <module>springboot3-rest-crud</module>
+        <module>springboot3-general-service</module>
     </modules>
 
 </project>
