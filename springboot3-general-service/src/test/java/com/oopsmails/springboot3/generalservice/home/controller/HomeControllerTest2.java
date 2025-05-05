@@ -15,6 +15,17 @@ import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+/**
+ * Pros:
+ * Uses MockMvcBuilders.standaloneSetup, which does not require a Spring context.
+ * Faster and more isolated, focusing only on the controller and its dependencies.
+ * Ideal for unit tests where you want to test the controller in isolation.
+ *
+ * Cons:
+ * Requires manual setup of mocks and dependencies.
+ * Does not test the controller in a real Spring environment.
+ */
+
 class HomeControllerTest2 {
     private MockMvc mockMvc;
 

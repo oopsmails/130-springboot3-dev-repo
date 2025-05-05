@@ -14,6 +14,20 @@ import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+/**
+ * This is a test class for the HomeController.
+ * It uses Spring's MockMvc to perform HTTP requests and verify responses.
+ *
+ * Pros:
+ * Uses @SpringBootTest and @MockBean, which means it runs in a Spring context.
+ * Automatically wires dependencies, making it easier to test components in a Spring-managed environment.
+ * Suitable for integration tests where you want to test the controller with Spring's full context.
+ *
+ * Cons:
+ * Slower because it loads the Spring context.
+ * Less isolated, as it depends on the Spring framework.
+ */
+
 @SpringBootTest
 @AutoConfigureMockMvc
 class HomeControllerTest {
