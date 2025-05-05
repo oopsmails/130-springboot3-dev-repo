@@ -19,7 +19,7 @@ public class HomeController {
     }
 
     @GetMapping("/echo")
-    public String sendEmail(@RequestParam String text) {
+    public String echoString(@RequestParam String text) {
         return homeService.echo(text);
     }
 }
