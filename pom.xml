@@ -9,12 +9,17 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <mockito.version>5.3.1</mockito.version>
-        <mockito.inline.version>4.5.1</mockito.inline.version>
-    </properties>
+<!--    this is a parent pom file, but only for mvn together -->
+
+<!--    <properties>-->
+<!--        <maven.compiler.source>17</maven.compiler.source>-->
+<!--        <maven.compiler.target>17</maven.compiler.target>-->
+<!--        <lombok.version>1.18.20</lombok.version>-->
+<!--        <mockito.version>5.3.1</mockito.version>-->
+<!--        <mockito.inline.version>4.5.1</mockito.inline.version>-->
+<!--        <equalsverifier.version>3.15.3</equalsverifier.version>-->
+<!--        <assertj.version>3.24.2</assertj.version>-->
+<!--    </properties>-->
 
     <modules>
         <module>springboot3-rest-crud</module>
@@ -22,20 +27,32 @@
         <module>unit-test5</module>
     </modules>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.mockito</groupId>
-                <artifactId>mockito-core</artifactId>
-                <version>${mockito.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.mockito</groupId>
-                <artifactId>mockito-inline</artifactId>
-                <version>${mockito.inline.version}</version>
-                <scope>test</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+<!--    <dependencyManagement>-->
+<!--        <dependencies>-->
+<!--            <dependency>-->
+<!--                <groupId>org.mockito</groupId>-->
+<!--                <artifactId>mockito-core</artifactId>-->
+<!--                <version>${mockito.version}</version>-->
+<!--                <scope>test</scope>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>org.mockito</groupId>-->
+<!--                <artifactId>mockito-inline</artifactId>-->
+<!--                <version>${mockito.inline.version}</version>-->
+<!--                <scope>test</scope>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>nl.jqno.equalsverifier</groupId>-->
+<!--                <artifactId>equalsverifier</artifactId>-->
+<!--                <version>${equalsverifier.version}</version>-->
+<!--                <scope>test</scope>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>org.assertj</groupId>-->
+<!--                <artifactId>assertj-core</artifactId>-->
+<!--                <version>${assertj.version}</version>-->
+<!--                <scope>test</scope>-->
+<!--            </dependency>-->
+<!--        </dependencies>-->
+<!--    </dependencyManagement>-->
 </project>
