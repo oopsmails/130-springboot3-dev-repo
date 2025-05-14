@@ -3,6 +3,7 @@ package com.oopsmails.springboot3.generalservice.home.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.oopsmails.springboot3.generalservice.home.dto.EchoResponse;
 import com.oopsmails.springboot3.generalservice.home.service.HomeService;
+import com.oopsmails.springboot3.generalservice.home.service.HomeService2;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -26,14 +27,29 @@ class HomeControllerTest3 {
     @Mock
     private HomeService homeService;
 
+    @Mock
+    private HomeService2 homeService2;
+
     private ObjectMapper objectMapper;
 
     @BeforeEach
-    void setup() {
+    void setup() throws Exception {
         MockitoAnnotations.openMocks(this);
+//        mockMvc = MockMvcBuilders
+//                .standaloneSetup(new HomeController(homeService))
+//                .build();
+
+        HomeController homeController = new HomeController(homeService);
+
+        // Use reflection to set the private field 'homeService2'
+        java.lang.reflect.Field field = HomeController.class.getDeclaredField("homeService2");
+        field.setAccessible(true);
+        field.set(homeController, homeService2);
+
         mockMvc = MockMvcBuilders
-                .standaloneSetup(new HomeController(homeService))
+                .standaloneSetup(homeController)
                 .build();
+
         objectMapper = new ObjectMapper(); // Initialize ObjectMapper
     }
 
@@ -48,6 +64,7 @@ class HomeControllerTest3 {
 
         // Mock the behavior of HomeService
         when(homeService.echo("test")).thenReturn(jsonContent);
+        when(homeService2.echo2("test")).thenReturn(jsonContent);
 
         // Perform the request and map the response to EchoResponse
         String actualJson = mockMvc.perform(get("/home/echo")

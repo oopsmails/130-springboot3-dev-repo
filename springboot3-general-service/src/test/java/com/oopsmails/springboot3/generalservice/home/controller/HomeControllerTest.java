@@ -1,6 +1,7 @@
 package com.oopsmails.springboot3.generalservice.home.controller;
 
 import com.oopsmails.springboot3.generalservice.home.service.HomeService;
+import com.oopsmails.springboot3.generalservice.home.service.HomeService2;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -36,6 +37,9 @@ class HomeControllerTest {
 
     @MockBean
     private HomeService homeService;
+
+    @MockBean
+    private HomeService2 homeService2;
 
     @Test
     void getEndpoint() throws Exception {
